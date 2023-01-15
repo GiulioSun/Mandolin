@@ -6,13 +6,13 @@ import streamlit as st
 class Metric:
 
     @staticmethod
-    def start_end_year(n_years):
+    def start_and_year_box(n_years):
         # set end year
-        end_year = datetime.date.today().year
+        end_year = datetime.date.today().year - 1
         # set start year
         start_year = end_year - n_years
         # list of selected years
-        years = [year for year in range(start_year, end_year)]
+        years = [year for year in range(end_year, start_year, -1)]
         # set graphics object for select year
         col_date1, col_data2 = st.columns(2)
         end_year_input = col_date1.selectbox("Seleziona l'anno", years)
@@ -20,7 +20,18 @@ class Metric:
         if end_year_input != end_year:
             end_year = end_year_input
         start_year = end_year - n_years
-        return start_year, end_year
+        return start_year, end_year, years
+
+    @staticmethod
+    def start_and_year(n_years):
+        # set end year
+        end_year = datetime.date.today().year - 2
+        # set start year
+        start_year = end_year - n_years
+        # list of selected years
+        years = [year for year in range(end_year, start_year, -1)]
+        start_year = end_year - n_years
+        return start_year, end_year, years
 
     @staticmethod
     def metric(end_year, value_list, delta_list, label, label_value='', label_delta=''):

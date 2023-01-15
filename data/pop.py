@@ -4,14 +4,14 @@ import eurostat
 class Pop:
 
     @staticmethod
-    def pop(start_year, end_year, year_ago):
+    def pop(start_year, end_year, year_ago, sex='T'):
         my_filter_pars_pop = {'startPeriod': start_year,
                               'endPeriod': end_year,
                               'geo': ['IT'],
                               'freq': 'A',
                               'unit': 'NR',
                               'age': 'TOTAL',
-                              'sex': 'T',
+                              'sex': sex,
                               }
 
         df_pop = eurostat.get_data_df('DEMO_GIND', filter_pars=my_filter_pars_pop)
