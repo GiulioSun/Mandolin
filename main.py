@@ -23,7 +23,7 @@ if __name__ == '__main__':
         with tab1:
             start_year, end_year = Metric.start_end_year(10)
             gdp, delta_gdp = Fineco.gdp(start_year, end_year, 4)
-            gdp_capita, delta_capita = Fineco.gdp(start_year, end_year, 4)
+            gdp_capita, delta_capita = Fineco.gdpcapita(start_year, end_year, 4)
             Metric.metric(end_year, gdp, delta_gdp, label='PIL', label_value='€', label_delta='%')
             Metric.metric(end_year, gdp_capita, delta_capita, label='PIL pro capite', label_value='€', label_delta='%')
 
@@ -36,8 +36,6 @@ if __name__ == '__main__':
             start_year, end_year = Metric.start_end_year(10)
             pop, delta_pop = Pop.pop(start_year, end_year, 4)
             Metric.metric(end_year, pop, delta_pop, label='Popolazione', label_delta='%')
-
-
 
         with tab2:
             pass

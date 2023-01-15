@@ -34,13 +34,13 @@ class Metric:
         )
 
         col2.metric(
-            label=label + ' ' + str(end_year - 1),
-            value=str(value_list[1]) + ' €',
-            delta=str(delta_list[1]) + ' %',
+            label=f'{label} {str(end_year - 1)}',
+            value=f'{str(value_list[1])} {label_value}',
+            delta=f'{str(delta_list[1])} {label_delta}',
         )
 
         col3.metric(
-            label=label + ' ' + str(end_year - 2),
-            value=str(value_list[2]) + ' €',
-            delta=str(delta_list[2]) + ' %',
+            label=f'{label} {str(end_year - 2)}',
+            value=f'{str(value_list[2])} {label_value}',
+            delta=f'{str(delta_list[2])} {label_delta}',
         )
